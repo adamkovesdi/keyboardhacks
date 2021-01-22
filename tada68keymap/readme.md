@@ -20,18 +20,23 @@ This is a layout for my TADA68 work keyboard for QMK firmware.
    * ,----------------------------------------------------------------.
    * |   | F1|F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|Del    |Ins |
    * |----------------------------------------------------------------|
-   * |     |   |Up |   |   |   |   |   |   |   |   |   |   |     |Hme |
+   * |     |   |Up |   |   |   |   |   |   |   |   |Fc-|Fc+|Click|Hme |
    * |----------------------------------------------------------------|
-   * |      |<- |Dn | ->|   |   |   |   |   |   |   |   |        |End |
+   * |      |<- |Dn | ->|   |   |<- |Dn |Up | ->|   |   |        |End |
    * |----------------------------------------------------------------|
-   * |        |   |   |Bl-|BL |BL+|   |VU-|VU+|MUT|   |   McL|MsU|McR |
+   * |        |   |   |Bl-|BL |BL+|   |MUT|VU-|VU+|   |   McL|MsU|McR |
    * |----------------------------------------------------------------|
    * |    |    |    |                       |   |   |    |MsL|MsD|MsR |
    * `----------------------------------------------------------------'
    */
 ```
 
-## installation
+## Installation
 
 Copy all the files to QMK directory then build
 
+config.h and rules.mk should go to the keyboard directory keymap.c into the layouts directory
+
+## Remarks
+
+I've modded my TADA68 to have Backlight on MOSI pin of the Atmega32u4. This needs software backlight driver in QMK. Also put a buzzer on the original backlight pin and there I can have a faux clicky. All these changes are reflected in config.h
